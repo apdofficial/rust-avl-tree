@@ -1,0 +1,5 @@
+# environment variables:
+AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1
+AFL_KILL_SIGNAL=9
+# command line:
+'/home/parallels/.local/share/afl.rs/rustc-1.56.1-59eed8a/afl.rs-0.11.1/afl/bin/afl-fuzz' '-i' 'in' '-o' 'out' 'target/debug/tree-fuzz-target'

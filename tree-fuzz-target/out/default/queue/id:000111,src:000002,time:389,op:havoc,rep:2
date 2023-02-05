@@ -1,0 +1,9 @@
+i 10 a
+i 9 b
+i 8 a
+i 9 b
+i 8 cp
+ ci 9 b
+i 8 c
+p
+q

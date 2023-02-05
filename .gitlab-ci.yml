@@ -1,0 +1,33 @@
+stages:
+  - build
+  - test
+
+rust-latest:
+  stage: build
+  image: rust:latest
+  script:
+    - cargo build --verbose
+    - cargo test --verbose
+  artifacts:
+    paths:
+    - target
+
+rust-nightly:
+  stage: build
+  image: rustlang/rust:nightly
+  script:
+    - cargo build --verbose
+    - cargo test --verbose
+  allow_failure: true
+
+test:
+  stage: test
+  image: rust:latest
+  script:
+    - ./test_main.sh
+    - chmod +x ./test_sorted.sh
+    - ./test_sorted.sh
+    - chmod +x ./test_tree.sh
+    - ./test_tree.sh
+    - chmod +x ./test_balanced.sh
+    - ./test_balanced.sh
